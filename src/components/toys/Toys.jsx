@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import SingleToy from './SingleToy';
 import { Col, Container, Row } from 'react-bootstrap';
 
 const Toys = () => {
-   const toys= useLoaderData();
-    console.log(toys);
+  const [toys, setToys] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/toys')
+      .then(response => response.json())
+      .then(data => setToys(data))
+      .catch(error => console.log(error));
+  }, []);
   return (
     <>
         <Container>

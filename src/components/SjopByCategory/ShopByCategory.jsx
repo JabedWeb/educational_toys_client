@@ -16,7 +16,7 @@ const ShopByCategory = () => {
     }, []);
   
     const subcategories = [...new Set(toyData.map(toy => toy.subcategory))];
-    console.log(subcategories);
+    // console.log(subcategories);
   
     const handleTabClick = subcategory => {
       setSelectedSubcategory(subcategory);
@@ -46,7 +46,7 @@ const ShopByCategory = () => {
             {
             filteredToys.map((toy) => {
                 {
-                    return (<Col key={toy.id}  md={3}><SingleToy toys={toy} /></Col>)
+                    return (<Col key={toy.id} md={3}><SingleToy toys={toy} /></Col>)
                 }
             })
             }
