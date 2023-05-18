@@ -3,6 +3,7 @@ import Main from "../layouts/Main";
 import Toys from "../components/toys/Toys";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
+import Error from "../pages/error/Error";
 
   const router = createBrowserRouter([
     {
@@ -27,6 +28,9 @@ import Register from "../pages/register/Register";
             element: <Register></Register>
         }
         ]
+    },{
+        path: "*",
+        element: <Error></Error>
     },
   ]);
 export default router;
