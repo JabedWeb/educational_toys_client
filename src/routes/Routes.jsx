@@ -4,6 +4,7 @@ import Toys from "../components/toys/Toys";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import Error from "../pages/error/Error";
+import Home from "../pages/Home/Home";
 
   const router = createBrowserRouter([
     {
@@ -12,7 +13,7 @@ import Error from "../pages/error/Error";
       children: [
         {
             path: "/",
-            element: <h1>Home</h1>,
+            element: <Home></Home>,
         },
         {
             path: "/toys",

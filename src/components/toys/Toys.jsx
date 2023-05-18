@@ -13,7 +13,7 @@ const Toys = () => {
             {
             toys.map((toy) => {
                 {
-                    return (<Col  md={3}><SingleToy key={toy.id} toys={toy} /></Col>)
+                    return (<Col key={toy.id}  md={3}><SingleToy toys={toy} /></Col>)
                 }
             })
             }
