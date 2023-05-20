@@ -44,8 +44,8 @@ const MyToys = () => {
   };
 
   return (
-    <Container>
-        <Table striped bordered>
+    <Container className='table-responsive'>
+        <Table className='text-center' striped bordered >
         <thead>
           <tr>
             <th>Name</th>
@@ -63,7 +63,7 @@ const MyToys = () => {
               <td>{toy.quantity}</td>
               <td>{toy.description}</td>
               <td>
-                <Button variant="primary" onClick={() => setModalShow(true)}>
+                <Button className='m-1' variant="primary" onClick={() => setModalShow(true)}>
                     Update
                 </Button>
 
@@ -75,7 +75,7 @@ const MyToys = () => {
                     setMyToys={setMyToys}
                     onHide={() => setModalShow(false)}
                 />
-                <Button variant="danger" onClick={() => handleDeleteToy(toy._id)}>
+                <Button className='m-1' variant="danger" onClick={() => handleDeleteToy(toy._id)}>
                   Delete
                 </Button>
               </td>
