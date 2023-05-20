@@ -17,6 +17,8 @@ const ShopByCategory = () => {
   
     const subcategories = [...new Set(toyData.map(toy => toy.subcategory))];
     // console.log(subcategories);
+
+    subcategories.splice(subcategories.indexOf(''), 1);
   
     const handleTabClick = subcategory => {
       setSelectedSubcategory(subcategory);

@@ -29,7 +29,9 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto navbar_custom">
             <Link className='text-decoration-none text-light' to={'/toys'}>All Toy</Link>
-            <Link className='text-decoration-none text-light px-3' to={'/mytoys'}>My Toys</Link>
+           {
+              user && <Link className='text-decoration-none text-light px-3' to={'/mytoys'}>My Toys</Link>
+           }
             <Link className='text-decoration-none text-light px-3' to={'/addtoy'}>Add Toy</Link>
            <Link className='text-decoration-none text-light' to={'/blog'}>Blog</Link>
           </Nav>

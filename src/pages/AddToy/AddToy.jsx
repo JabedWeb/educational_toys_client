@@ -1,7 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
+import { authContext } from '../../providers/authprovider/AuthProvider';
 
 const AddToy = () => {
+
+  const [toyData, setToyData] = useState([]);
+
+  const {user}=useContext(authContext)
+
+
+  useEffect(() => {
+    fetch('http://localhost:5000/toys')
+      .then(response => response.json())
+      .then(data => setToyData(data))
+      .catch(error => console.log(error));
+  }, []);
+
+  // show the subcategories in the dropdown
+  const subcategories = [...new Set(toyData.map(toy => toy.subcategory))];
+
+  // remove the empty subcategories
+  subcategories.splice(subcategories.indexOf(''), 1);
+
+
+  console.log(subcategories);
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -40,25 +62,32 @@ const AddToy = () => {
             form.reset();
         })
     }
+
+  
+
   return (
     <Container>
     <h2>Add Toy</h2>
-    <Form onSubmit={handleSubmit}>
-      <Form.Group controlId="name">
+    <Form  onSubmit={handleSubmit}>
+      <Form.Group  controlId="name">
         <Form.Label>Name:</Form.Label>
         <Form.Control type="text" name="name" />
       </Form.Group>
       <Form.Group controlId="sellerName">
         <Form.Label>Seller Name:</Form.Label>
-        <Form.Control type="text" name="sellerName" />
+        <Form.Control type="text" name="sellerName" defaultValue={user?.name} />
       </Form.Group>
       <Form.Group controlId="sellerEmail">
         <Form.Label>Seller Email:</Form.Label>
-        <Form.Control type="email" name="sellerEmail" />
+        <Form.Control type="email" name="sellerEmail" defaultValue={user?.email} />
       </Form.Group>
       <Form.Group controlId="subcategory">
         <Form.Label>Subcategory:</Form.Label>
-        <Form.Control type="text" name="subcategory" />
+        <Form.Control as="select" name="subcategory">
+          {subcategories.map(subcategory => (
+            <option key={subcategory}>{subcategory}</option>
+          ))}
+        </Form.Control>
       </Form.Group>
       <Form.Group controlId="price">
         <Form.Label>Price:</Form.Label>
