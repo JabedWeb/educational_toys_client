@@ -1,34 +1,35 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import './SingleToy.css'
+import { FaStar } from "react-icons/fa";
 
 const SingleToy = ({ toys }) => {
   const {
     _id,
+    pictureUrl,
     name,
-    sellerName,
-    sellerEmail,
     subcategory,
     price,
     rating,
-    quantity,
-    description,
-    pictureUrl,
+
   } = toys;
 
   return (
     <Card className="my-3">
+
+      <div className="cardImg" style={{backgroundColor: "#FFF8D6"}} >
       <Card.Img  variant="top" src={pictureUrl} alt={name} />
+      </div>
+      
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
-          Seller: {sellerName} ({sellerEmail})
-        </Card.Text>
-        <Card.Text>Subcategory: {subcategory}</Card.Text>
-        <Card.Text>Price: ${price}</Card.Text>
-        <Card.Text>Rating: {rating}</Card.Text>
-        <Card.Text>Quantity: {quantity}</Card.Text>
-        <Card.Text>Description: {description}</Card.Text>
-        <Link to={`/toys/${_id}`}>View Details</Link>
+        <Card.Title> <h5>{name}</h5> </Card.Title>
+        <Card.Text> <h6>{subcategory}</h6> </Card.Text>
+          <div className="price_ratting d-flex justify-content-between">
+          <Card.Text> <strong>${price}</strong> </Card.Text>
+          <Card.Text> <strong className="d-flex align-items-center"> <FaStar className="me-1" style={{color : "gold"}}></FaStar>{rating}
+          </strong> </Card.Text>
+          </div>
+        <Link className="text-decoration-none" style={{color : "#617A55"}} to={`/toys/${_id}`}>View Details</Link>
       </Card.Body>
     </Card>
   );

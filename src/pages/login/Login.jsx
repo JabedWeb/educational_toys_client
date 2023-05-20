@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import {Link, useLocation, useNavigate } from 'react-router-dom'
-import { FaGithub, FaGoogle } from 'react-icons/fa'
+import { FaGoogle } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import { authContext } from '../../providers/authprovider/AuthProvider'
 
