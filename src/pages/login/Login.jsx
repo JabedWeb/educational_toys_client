@@ -51,7 +51,7 @@ const Login = () => {
   return (
     <Container>
     <Row className='justify-content-center'>
-      <Col className='justify-content-center bg-dark text-light p-5 my-5' md={5}>
+      <Col className='justify-content-center shadow  p-5 my-5' md={5}>
       <form onSubmit={handleLogin}>
         <div className="mb-3">
           <label  className="form-label">Email address</label>
@@ -62,17 +62,17 @@ const Login = () => {
           <label  className="form-label">Password</label>
           <input name='password' type="password" className="form-control"/>
         </div>
-        <button type="submit"  className="btn btn-light mb-3">login</button>
+        <button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}} type="submit"  className="btn text-light mb-3">login</button>
      </form>
      {
-        success ? <strong className='text-center mt-2 text-success'>{success}</strong> : ''
+        success ? <strong className='text-center mt-2 text-success'>{success}</strong> : '' 
       }
      <div className="social_login d-flex justify-content-center flex-wrap">
           <div className="google_sign">
-             <button style={{borderRadius:"4px"}} onClick={signInWithGoggle}  className='btn d-flex align-items-center fw-bold px-3 my-2 py-2 btn-warning text-dark me-2'> <FaGoogle className='me-1'></FaGoogle> Google LogIn</button>
+             <button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}}  onClick={signInWithGoggle}  className='btn d-flex align-items-center fw-bold px-3 my-2 py-2  text-light me-2'> <FaGoogle className='me-1'></FaGoogle> Google LogIn</button>
           </div>
        </div>
-       <h5 className='text-center mt-2'>Are you new Chef ? <Link className='text-warning text-decoration-none' to={'/register'}> Register</Link></h5>
+       <h5 className='text-center mt-2'>Are you new Chef ? <Link style={{color: "#617A55"}} className=' text-decoration-none' to={'/register'}> Register</Link></h5>
 
       </Col>
     </Row>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import { authContext } from '../../providers/authprovider/AuthProvider';
-
+import './AddToy.css'
 const AddToy = () => {
 
   const [toyData, setToyData] = useState([]);
@@ -67,8 +67,9 @@ const AddToy = () => {
 
   return (
     <Container>
-    <h2>Add Toy</h2>
-    <Form  onSubmit={handleSubmit}>
+
+    <Form  className='shadow form_toy my-5 p-5 ' onSubmit={handleSubmit}>
+     <h2 className=' my-2'>Add New Toy</h2>
       <Form.Group  controlId="name">
         <Form.Label>Name:</Form.Label>
         <Form.Control type="text" name="name" />
@@ -109,7 +110,7 @@ const AddToy = () => {
         <Form.Label>Picture URL:</Form.Label>
         <Form.Control type="text" name="pictureUrl" />
       </Form.Group>
-      <Button  className='my-3 mx-auto w-100' type="submit">Submit</Button>
+      <Button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}}  className='my-3 mx-auto w-100' type="submit">Submit</Button>
     </Form>
   </Container>
   )

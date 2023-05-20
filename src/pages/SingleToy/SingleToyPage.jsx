@@ -28,7 +28,7 @@ const SingleToyPage = () => {
                     <img src={pictureUrl} alt={name} />
                 </div>
                 <div className="toy_details_info w-50 table-responsive">
-                    <Table striped bordered responsive>
+                    <Table className='text-start' striped bordered responsive>
                         <tbody>
                             <tr>
                                 <th>Product name</th>

@@ -39,7 +39,7 @@ const Toys = () => {
                 }
             })
             }
-            <Button className={buttonShow} onClick={handleViewAllToys}>View More</Button>
+            <Button  style={{backgroundColor: "#617A55" ,borderRadius:"4px" , margin: "20px 0px"}} className={buttonShow} onClick={handleViewAllToys}>View More</Button>
           </Row>
         </Container>
     </>

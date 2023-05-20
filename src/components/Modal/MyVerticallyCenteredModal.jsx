@@ -59,9 +59,9 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
 }
 
   return (
-<Modal show={show} onHide={onHide}>
+<Modal  show={show} onHide={onHide}>
       <Modal.Header closeButton>
-        <Modal.Title>Add a Toy</Modal.Title>
+        <Modal.Title>Update {name} Toy</Modal.Title>
       </Modal.Header>
     <Modal.Body>
     <Form onSubmit={handleSubmitUpdate}>
@@ -101,7 +101,7 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
         <Form.Label>Picture URL:</Form.Label>
         <Form.Control type="text" name="pictureUrl" defaultValue={toy.pictureUrl}/>
       </Form.Group>
-      <Button  className='my-3 mx-auto w-100' type="submit">Submit</Button>
+      <Button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}}  className='my-3 mx-auto w-100' type="submit">Submit</Button>
     </Form>
     </Modal.Body>
     <Modal.Footer>

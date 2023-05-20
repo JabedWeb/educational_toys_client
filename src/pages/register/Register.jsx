@@ -68,7 +68,7 @@ const Register = () => {
   return (
     <Container>
       <Row className='justify-content-center'>
-        <Col className='justify-content-center bg-dark text-light p-5 my-5' md={5}>
+        <Col className='justify-content-center shadow p-5 my-5' md={5}>
         <form onSubmit={handleRegister}>
           <h3 className='text-center'>Register</h3>
         <div className="mb-3">
@@ -88,7 +88,7 @@ const Register = () => {
             <label  className="form-label">Photo</label>
             <input name='photo' type="text" className="form-control"/>
           </div>
-          <button type="submit" className="btn btn-light mb-3 ">Register</button>
+          <button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}}  type="submit" className="btn text-light mb-3 ">Register</button>
        </form>
        <strong className='text-danger'>{error?error : ''}</strong>
        {/* <div className="social_login d-flex justify-content-center flex-wrap">
@@ -99,7 +99,7 @@ const Register = () => {
              <button style={{borderRadius:"4px"}} onClick={signInWithGithub}  className='btn fw-bold px-3 my-2 py-2 btn-warning text-dark me-2'> <FaGithub className='me-1'></FaGithub> Github SignUp</button>
           </div>
        </div> */}
-       <h5 className='text-center mt-2'>I have already account ? <Link className='text-warning text-decoration-none' to={'/login'}> Login</Link></h5>
+       <h5 className='text-center mt-2'>I have already account ? <Link style={{color: "#617A55"}} className='text-decoration-none' to={'/login'}> Login</Link></h5>
         </Col>
       </Row>
     </Container>

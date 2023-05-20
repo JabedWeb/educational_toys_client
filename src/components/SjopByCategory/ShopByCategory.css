@@ -20,5 +20,6 @@
 }
 
 .tabContainer button.active {
-  background-color: #ccc;
+  background-color:#617A55;
+  color: #fff;
 }
