@@ -45,7 +45,7 @@ const MyToys = () => {
 
   return (
     <Container>
-            <Table striped bordered>
+        <Table striped bordered>
         <thead>
           <tr>
             <th>Name</th>

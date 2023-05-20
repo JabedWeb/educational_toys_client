@@ -1,6 +1,8 @@
 import React from 'react'
-import { Container } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom'
+
+import './SingleToyPage.css'
 
 const SingleToyPage = () => {
     const toy =useLoaderData();
@@ -17,22 +19,60 @@ const SingleToyPage = () => {
         pictureUrl } =toy;
     console.log(toy);
   return (
-    <Container>
-        <h1>Toys Details</h1>
 
-            <div className="toy_details d-flex justify-content-between align-items-center ">
-                <div className="toy_details_info">
-                    <h2>{name}</h2>
-                    <p>Description: ${description}</p>
-                    <p>Seller: {sellerName} ({sellerEmail})</p>
-                    <p>Subcategory: {subcategory}</p>
-                    <p>Price: ${price}</p>
-                    <p>Rating: ${rating}</p>
-                    <p>Quantity: ${quantity}</p>
-                </div>
-                <div style={{width:"700px"}} className="toy_details_image">
+    <Container className='my-5'>
+        <h1 className='text-center'>Toys Details on <strong style={{color : "#617A55"}}> {name}</strong></h1>
+
+            <div className="toy_details d-flex flex-wrap justify-content-between align-items-center ">
+                <div className="toy_details_image w-50">
                     <img src={pictureUrl} alt={name} />
                 </div>
+                <div className="toy_details_info w-50 table-responsive">
+                    <Table striped bordered responsive>
+                        <tbody>
+                            <tr>
+                                <th>Product name</th>
+                                <td>{name}</td>
+                            </tr>
+                            <tr>
+                                <th>Product ID</th>
+                                <td>{_id}</td>
+                            </tr>
+                            <tr>
+                                <th>Product Price</th>
+                                <td>{price}</td>
+                            </tr>
+                            <tr>
+                                <th>Product Rating</th>
+                                <td>{rating}</td>
+                            </tr>
+                            <tr>
+                                <th>Product Quantity</th>
+                                <td>{quantity}</td>
+                            </tr>
+                            <tr>
+                                <th>Product Description</th>
+                                <td>{description}</td>
+                            </tr>
+                            <tr>
+                                <th>Product Subcategory</th>
+                                <td>{subcategory}</td>
+                            </tr>
+                            <tr>
+                                <th>Seller Name</th>
+                                <td>{sellerName}</td>
+                            </tr>
+                            <tr>
+                                <th>Seller Email</th>
+                                <td>{sellerEmail}</td>
+                            </tr>
+
+                        </tbody>
+
+                    </Table>
+
+                </div>
+
             </div>
 
 
