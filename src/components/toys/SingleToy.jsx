@@ -16,7 +16,7 @@ const SingleToy = ({ toys }) => {
   } = toys;
 
   return (
-    <Card>
+    <Card className="my-3">
       <Card.Img  variant="top" src={pictureUrl} alt={name} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>

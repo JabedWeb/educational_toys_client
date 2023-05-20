@@ -6,7 +6,7 @@ import SingleToy from '../toys/SingleToy';
 const ShopByCategory = () => {
 
     const [toyData, setToyData] = useState([]);
-    const [selectedSubcategory, setSelectedSubcategory] = useState(null);
+    const [selectedSubcategory, setSelectedSubcategory] = useState('Language Toys');
   
     useEffect(() => {
       fetch('http://localhost:5000/toys')
@@ -22,10 +22,11 @@ const ShopByCategory = () => {
   
     const handleTabClick = subcategory => {
       setSelectedSubcategory(subcategory);
+      console.log(subcategory);
     };
   
     const filteredToys = toyData.filter(toy =>
-      selectedSubcategory ? toy.subcategory === selectedSubcategory : true
+      selectedSubcategory ? toy.subcategory === selectedSubcategory : {}
     );
 
 
@@ -44,7 +45,7 @@ const ShopByCategory = () => {
       </div>
       <div>
       <Container>
-          <Row>
+          <Row className='d-flex justify-content-center'>
             {
             filteredToys.map((toy) => {
                 {

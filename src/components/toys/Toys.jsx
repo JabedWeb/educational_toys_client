@@ -6,6 +6,8 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 const Toys = () => {
   const [toys, setToys] = useState([]);
 
+  const [buttonShow,setButtonsShow]=useState('d-block')
+
 
 
   useEffect(() => {
@@ -20,6 +22,7 @@ const Toys = () => {
     .then(response => response.json())
     .then(data => {
       setToys(data);
+      setButtonsShow('d-none')
     })
     .catch(error => {
       console.log(error);
@@ -36,7 +39,7 @@ const Toys = () => {
                 }
             })
             }
-            <Button onClick={handleViewAllToys}>View More</Button>
+            <Button className={buttonShow} onClick={handleViewAllToys}>View More</Button>
           </Row>
         </Container>
     </>
