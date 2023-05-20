@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import SingleToy from './SingleToy';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 
 const Toys = () => {
   const [toys, setToys] = useState([]);
 
+
+
   useEffect(() => {
-    fetch('http://localhost:5000/toys')
+    fetch('http://localhost:5000/toys?limit=10')
       .then(response => response.json())
       .then(data => setToys(data))
       .catch(error => console.log(error));
   }, []);
+
+  const handleViewAllToys=()=>{
+    fetch('http://localhost:5000/toys')
+    .then(response => response.json())
+    .then(data => {
+      setToys(data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
   return (
     <>
         <Container>
@@ -23,6 +36,7 @@ const Toys = () => {
                 }
             })
             }
+            <Button onClick={handleViewAllToys}>View More</Button>
           </Row>
         </Container>
     </>
