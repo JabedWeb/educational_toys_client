@@ -14,7 +14,7 @@ const AddToy = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/toys')
+    fetch('https://educational-toys-server-jabedweb.vercel.app/toys')
       .then(response => response.json())
       .then(data => setToyData(data))
       .catch(error => console.log(error));
@@ -57,7 +57,7 @@ const AddToy = () => {
             return;
         }
         //send the data to the server
-        fetch('http://localhost:5000/toys', {
+        fetch('https://educational-toys-server-jabedweb.vercel.app/toys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -81,17 +81,17 @@ const AddToy = () => {
 
     <Form  className='shadow form_toy my-5 p-5 ' onSubmit={handleSubmit}>
      <h2 className=' my-2'>Add New Toy</h2>
-      <Form.Group  controlId="name">
-        <Form.Label>Name:</Form.Label>
-        <Form.Control type="text" name="name" />
-      </Form.Group>
-      <Form.Group controlId="sellerName">
+     <Form.Group controlId="sellerName">
         <Form.Label>Seller Name:</Form.Label>
         <Form.Control type="text" name="sellerName" value={user?.name} />
       </Form.Group>
       <Form.Group controlId="sellerEmail">
         <Form.Label>Seller Email:</Form.Label>
         <Form.Control type="email" name="sellerEmail" value={user?.email} />
+      </Form.Group>
+      <Form.Group  controlId="name">
+        <Form.Label>Toy Name:</Form.Label>
+        <Form.Control type="text" name="name" />
       </Form.Group>
       <Form.Group controlId="subcategory">
         <Form.Label>Subcategory:</Form.Label>

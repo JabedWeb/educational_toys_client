@@ -11,14 +11,14 @@ const Toys = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/toys?limit=10')
+    fetch('https://educational-toys-server-jabedweb.vercel.app/toys?limit=10')
       .then(response => response.json())
       .then(data => setToys(data))
       .catch(error => console.log(error));
   }, []);
 
   const handleViewAllToys=()=>{
-    fetch('http://localhost:5000/toys')
+    fetch('https://educational-toys-server-jabedweb.vercel.app/toys')
     .then(response => response.json())
     .then(data => {
       setToys(data);
@@ -30,12 +30,12 @@ const Toys = () => {
   }
   // const setSortOrder = (event) => {
   //   if(event.target.value === 'asc') {
-  //     fetch('http://localhost:5000/toys?sort=price&order=asc')
+  //     fetch('https://educational-toys-server-jabedweb.vercel.app/toys?sort=price&order=asc')
   //       .then(response => response.json())
   //       .then(data => setToys(data))
   //       .catch(error => console.log(error));
   //   } else if(event.target.value === 'desc') {
-  //     fetch('http://localhost:5000/toys?sort=price&order=desc')
+  //     fetch('https://educational-toys-server-jabedweb.vercel.app/toys?sort=price&order=desc')
 
   //       .then(response => response.json())
   //       .then(data => setToys(data))
@@ -52,7 +52,7 @@ const Toys = () => {
     } else {
       return;
     }
-    fetch(`http://localhost:5000/toys?sort=price&order=${order}`)
+    fetch(`https://educational-toys-server-jabedweb.vercel.app/toys?sort=price&order=${order}`)
 
       .then(response => response.json())
       .then(data => setToys(data))
@@ -64,7 +64,7 @@ const Toys = () => {
 
   const handleSearchInputChange = (e) => {
     console.log(e.target.value);
-    fetch(`http://localhost:5000/toys?search=${e.target.value}`)
+    fetch(`https://educational-toys-server-jabedweb.vercel.app/toys?search=${e.target.value}`)
     .then(response => response.json())
     .then(data => {
       console.log(data);

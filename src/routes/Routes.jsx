@@ -23,12 +23,12 @@ import Blog from "../pages/blog/Blog";
         {
             path: "/toys",
             element: <Toys></Toys>,
-            loader : (()=>fetch('http://localhost:5000/toys'))
+            loader : (()=>fetch('https://educational-toys-server-jabedweb.vercel.app/toys'))
         },
         {
             path: "/toys/:id",
             element:<PrivateRoute> <SingleToyPage></SingleToyPage></PrivateRoute>,
-            loader : (({params})=>fetch(`http://localhost:5000/toys/${params.id}`))
+            loader : (({params})=>fetch(`https://educational-toys-server-jabedweb.vercel.app/toys/${params.id}`))
         },
         {
             path: "/addtoy",

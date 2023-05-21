@@ -17,7 +17,7 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
     const sellerName = form.sellerName.value;
     const sellerEmail = form.sellerEmail.value;
     const subcategory = form.subcategory.value;
-    const price = form.price.value;
+    const price = parseInt(form.price.value);
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
@@ -43,7 +43,7 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
               'Your Toy has been updated.',
               'success'
               )
-              fetch(`http://localhost:5000/toys/${toyid}`, {
+              fetch(`https://educational-toys-server-jabedweb.vercel.app/toys/${toyid}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

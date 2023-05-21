@@ -14,7 +14,7 @@ const MyToys = () => {
   const {deleteToast}=useContext(ToastContext)
 //   const history = useHistory();
 
-  const url = `http://localhost:5000/mytoys?email=${user.email}`;
+  const url = `https://educational-toys-server-jabedweb.vercel.app/mytoys?email=${user.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -37,7 +37,7 @@ const MyToys = () => {
               'Your file has been deleted.',
               'success'
               )
-              fetch(`http://localhost:5000/toys/${toyId}`, {
+              fetch(`https://educational-toys-server-jabedweb.vercel.app/toys/${toyId}`, {
                 method: 'DELETE',
               })
                 .then((res) => res.json())

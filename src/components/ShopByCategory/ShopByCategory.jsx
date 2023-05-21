@@ -9,7 +9,7 @@ const ShopByCategory = () => {
     const [selectedSubcategory, setSelectedSubcategory] = useState('Language Toys');
   
     useEffect(() => {
-      fetch('http://localhost:5000/toys')
+      fetch('https://educational-toys-server-jabedweb.vercel.app/toys')
         .then(response => response.json())
         .then(data => setToyData(data))
         .catch(error => console.log(error));
