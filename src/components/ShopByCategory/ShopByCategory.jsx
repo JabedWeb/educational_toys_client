@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ShopByCategory.css';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import SingleToy from '../toys/SingleToy';
 
 const ShopByCategory = () => {
@@ -31,8 +31,12 @@ const ShopByCategory = () => {
 
 
   return (
-    <div data-aos-duration="600" data-aos="fade-right" data-aos-easing="ease-in-sine">
-      <h3 className='text-center'>Our Best Category Toys</h3>
+    <>
+        <h3 className='text-center'>Our Best Category Toys</h3>
+    {
+      toyData && toyData.length > 0 ? 
+      <div data-aos-duration="600" data-aos="fade-right" data-aos-easing="ease-in-sine">
+  
       <div className="tabContainer mt-5">
         {subcategories.map(subcategory => (
           <button
@@ -57,8 +61,19 @@ const ShopByCategory = () => {
           </Row>
         </Container>
       </div>
-    </div>
-  );
+    </div> :   <Button variant="primary" disabled>
+        <Spinner
+          as="span"
+          animation="grow"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Loading...
+      </Button>
+    }
+    </>
+  )
 };
 
 export default ShopByCategory;

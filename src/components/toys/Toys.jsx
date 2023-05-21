@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import SingleToy from './SingleToy';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import PageTitle from '../PageTitle/PageTitle';
 
 const Toys = () => {
@@ -28,20 +28,6 @@ const Toys = () => {
       console.log(error);
     });
   }
-  // const setSortOrder = (event) => {
-  //   if(event.target.value === 'asc') {
-  //     fetch('https://educational-toys-server-jabedweb.vercel.app/toys?sort=price&order=asc')
-  //       .then(response => response.json())
-  //       .then(data => setToys(data))
-  //       .catch(error => console.log(error));
-  //   } else if(event.target.value === 'desc') {
-  //     fetch('https://educational-toys-server-jabedweb.vercel.app/toys?sort=price&order=desc')
-
-  //       .then(response => response.json())
-  //       .then(data => setToys(data))
-  //       .catch(error => console.log(error));
-  //   }
-  // };
   const setSortOrder = (event) => {
     //short circuiting
     let order;
@@ -77,7 +63,9 @@ const Toys = () => {
     <>
         <Container className='my-5'>
           <PageTitle title="Toys"></PageTitle>
-          <Row>
+
+          {
+            toys && toys.length > 0 ? <Row>
             <h3 className='text-center mt-3 mb-3'>Explore Our All Toys</h3>
             <div className="sorting_search d-flex my-2 justify-content-between flex-wrap">
             <div>
@@ -101,10 +89,19 @@ const Toys = () => {
             })
             }
             <Button  style={{backgroundColor: "#617A55" ,borderRadius:"4px" , margin: "20px 0px"}} className={buttonShow} onClick={handleViewAllToys}>View More</Button>
-          </Row>
+          </Row> :  <Button variant="primary" disabled>
+        <Spinner
+          as="span"
+          animation="grow"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Loading...
+      </Button>
+          }
         </Container>
     </>
   )
 }
-
 export default Toys
