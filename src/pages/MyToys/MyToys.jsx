@@ -3,11 +3,14 @@ import { Container, Table, Button} from 'react-bootstrap';
 //import { useHistory } from 'react-router-dom';
 import { authContext } from '../../providers/authprovider/AuthProvider';
 import MyVerticallyCenteredModal from '../../components/Modal/MyVerticallyCenteredModal';
+import { ToastContext } from '../../providers/authprovider/SweetToast';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
   const { user } = useContext(authContext);
   const [myToys, setMyToys] = useState([]);
   const [modalShow, setModalShow] = useState(false);
+  const {deleteToast}=useContext(ToastContext)
 //   const history = useHistory();
 
   const url = `http://localhost:5000/mytoys?email=${user.email}`;
@@ -16,7 +19,6 @@ const MyToys = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setMyToys(data);
       })
       .catch((error) => {
@@ -25,22 +27,31 @@ const MyToys = () => {
   }, [myToys]);
 
   const handleDeleteToy = (toyId) => {
-    const confirmed = window.confirm('Are you sure you want to delete this toy?');
-    if (confirmed) {
-      // Send request to delete the toy
-      fetch(`http://localhost:5000/toys/${toyId}`, {
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log('Toy deleted successfully');
-          // Update the toy list after deletion
-          setMyToys(myToys.filter((toy) => toy._id !== toyId));
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+    
+    deleteToast()
+    .then((result) => {
+      if (result.isConfirmed) {
+          Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+              )
+              fetch(`http://localhost:5000/toys/${toyId}`, {
+                method: 'DELETE',
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log('Toy deleted successfully');
+                  // Update the toy list after deletion
+                  setMyToys(myToys.filter((toy) => toy._id !== toyId));
+                })
+                .catch((error) => {
+                  console.log(error);
+                });
+
+          }
+      }
+  )
   };
 
   return (

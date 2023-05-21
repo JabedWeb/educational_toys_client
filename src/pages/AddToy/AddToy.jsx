@@ -2,11 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Button, Container, Form } from 'react-bootstrap'
 import { authContext } from '../../providers/authprovider/AuthProvider';
 import './AddToy.css'
+import { ToastContext } from '../../providers/authprovider/SweetToast';
 const AddToy = () => {
 
   const [toyData, setToyData] = useState([]);
 
   const {user}=useContext(authContext)
+
+  const {addedToast,alertToast}=useContext(ToastContext)
 
 
   useEffect(() => {
@@ -48,6 +51,10 @@ const AddToy = () => {
             pictureUrl
         }
         console.log(newToy);
+        if(!name || !sellerName || !sellerEmail || !subcategory || !price || !rating || !quantity || !description || !pictureUrl){
+          alertToast()
+            return;
+        }
         //send the data to the server
         fetch('http://localhost:5000/toys', {
             method: 'POST',
@@ -58,8 +65,10 @@ const AddToy = () => {
         })
         .then(res => res.json())
         .then(data => {
+            addedToast();
             console.log(data);
             form.reset();
+            
         })
     }
 

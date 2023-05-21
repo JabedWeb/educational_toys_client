@@ -3,8 +3,8 @@ import React, { useContext, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import {Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGoogle } from 'react-icons/fa'
-import { toast } from 'react-toastify'
 import { authContext } from '../../providers/authprovider/AuthProvider'
+import { ToastContext } from '../../providers/authprovider/SweetToast'
 
 const Login = () => {
   const navigate=useNavigate();
@@ -12,8 +12,8 @@ const Login = () => {
   const from=location.state?.from?.pathname || '/';
 
 
-  const [success,setSuccess]=useState('')
   const {user,signIn,signInGoogle}=useContext(authContext)
+  const {successToast,wrongToast}=useContext(ToastContext)
   const handleLogin=(e)=>{
     e.preventDefault();
     const form=e.target;
@@ -21,13 +21,11 @@ const Login = () => {
     const password=form.password.value;
     signIn(email,password)
     .then(result=>{
-      setSuccess('Login Successfull');
-      toast('Login SuccessFully')
+      successToast()
       navigate(from)
     })
     .catch(error=>{
-      toast('Put Your Valid Credentials')
-      setSuccess('Put Your Valid Credentials');
+      wrongToast();
       console.log(error);
     }
     )

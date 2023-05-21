@@ -4,14 +4,12 @@ import { Col, Container, Row } from 'react-bootstrap'
 import { Button } from 'bootstrap'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { updateProfile } from 'firebase/auth'
-import { FaGithub, FaGoogle } from 'react-icons/fa'
-import { toast } from 'react-toastify'
 import { authContext } from '../../providers/authprovider/AuthProvider'
+import { ToastContext } from '../../providers/authprovider/SweetToast'
 
 const Register = () => {
-  const [error ,setError]=useState(null);
-  console.log(error);
   const {loginUser}=useContext(authContext)
+  const {successToast,alertToast}=useContext(ToastContext)
   
   const navigate=useNavigate();
   
@@ -25,13 +23,8 @@ const Register = () => {
     console.log(name,email,password,photo);
     //validate the password 
     if(!email || !password || !name || !photo){
-      setError('please fill up all the field');
+      alertToast()
       return;
-    }
-    else if (password.length<6){
-      setError('');
-      setError('password must be at least 6 character');
-     return
     }
     else {
       loginUser(email,password)
@@ -55,13 +48,12 @@ const Register = () => {
       photoURL:photo
     })
     .then(result=>{
-      toast('successfully registered');
+      successToast();
       navigate('/');
     }
     )
     .catch(error=>{
-      toast('Try it Again');
-      console.log(error);
+      alertToast();
     }
     )
   }

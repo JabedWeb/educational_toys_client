@@ -4,10 +4,12 @@ import Modal from 'react-bootstrap/Modal';
 import './toysModal.css'
 import { useContext, useState } from 'react';
 import { authContext } from '../../providers/authprovider/AuthProvider';
+import { ToastContext } from '../../providers/authprovider/SweetToast';
+import Swal from 'sweetalert2';
 
 const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => {
-  console.log(toyid,toy);
   const {user}=useContext(authContext);
+  const {updateToast}=useContext(ToastContext)
   const handleSubmitUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,9 +33,17 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
         description,
         pictureUrl
     }
-    console.log(updateToy);
     //update the data to the server
-    fetch(`http://localhost:5000/toys/${toyid}`, {
+    updateToast()
+    .then((result) => {
+      console.log(result);
+      if (result.isConfirmed) {
+          Swal.fire(
+              'Updated!',
+              'Your Toy has been updated.',
+              'success'
+              )
+              fetch(`http://localhost:5000/toys/${toyid}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -42,20 +52,15 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
         form.reset();
-        // if(data.modifiedCount>0){
-        //   //update the state
-        //   const remining=myToys.filter(toyy=>toyy._id!==toyid);
-        //   console.log("remining",remining);
-        //   const updated=myToys.find(toyy=>toyy._id==toyid);
-        //   console.log("updated",updated);
-        //   const newToys=[updated,...remining];
-        //   console.log("newToys",newToys);
-        //   setMyToys(newToys);
-        // }
         onHide();
     })
+
+          }
+          
+      }
+  )
+    
 }
 
   return (

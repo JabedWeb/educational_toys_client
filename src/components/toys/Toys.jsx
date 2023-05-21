@@ -74,21 +74,22 @@ const Toys = () => {
 
   return (
     <>
-        <Container>
+        <Container className='my-5'>
           <Row>
-                <h1>Toy Search</h1>
+            <div className="sorting_search d-flex justify-content-between flex-wrap">
             <div>
-              <input type="text" onChange={handleSearchInputChange} placeholder="Search by toy name" />
-            </div>
-           <div>
-            <label>Sort Order</label>
-            {/* <Button style={{backgroundColor: "#617A55" ,borderRadius:"4px" , margin: "20px 0px"}} className="d-block" onClick={() => setSortOrder('asc')}>Ascending</Button> */}
+            <h4>Sort Order</h4>
             <select onChange={setSortOrder}>
               <option value="">Select</option>
               <option value="asc">Ascending</option>
               <option value="desc">Descending</option>
             </select>
           </div>
+            <div>
+            <h4>Toy Search</h4>
+              <input type="text" onChange={handleSearchInputChange} placeholder="Search by toy name" />
+            </div>
+            </div>
             {
             toys.map((toy) => {
                 {
