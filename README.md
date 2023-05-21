@@ -26,19 +26,19 @@ Clone the repository from GitHub
 ```
 $ git clone
 ```
-Change into the directory
-```
-$ cd educational-toys
-```
-Install dependencies
+
+npm install
 ```
 $ npm install
 ```
 
+npm start
+```
 $ npm run dev
 ```
 
-### Live Link
+
+###Live Link
  Live Link: [https://educationaltoys-42f2f.web.app/](https://educationaltoys-42f2f.web.app/)
 
 
