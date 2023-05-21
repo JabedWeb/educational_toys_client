@@ -38,7 +38,7 @@ const Header = () => {
           <Nav className='align-items-center'>
             {
               user &&
-                <Link className='text-light' onClick={signOut}>
+                <Link className='text-light mx-3' onClick={signOut}>
               LogOut
             </Link>
               }

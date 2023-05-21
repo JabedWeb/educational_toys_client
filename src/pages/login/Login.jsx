@@ -72,7 +72,7 @@ const Login = () => {
              <button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}}  onClick={signInWithGoggle}  className='btn d-flex align-items-center fw-bold px-3 my-2 py-2  text-light me-2'> <FaGoogle className='me-1'></FaGoogle> Google LogIn</button>
           </div>
        </div>
-       <h5 className='text-center mt-2'>Are you new Chef ? <Link style={{color: "#617A55"}} className=' text-decoration-none' to={'/register'}> Register</Link></h5>
+       <h5 className='text-center mt-2'>Are you new Toy seller ? <Link style={{color: "#617A55"}} className=' text-decoration-none' to={'/register'}> Register</Link></h5>
 
       </Col>
     </Row>
