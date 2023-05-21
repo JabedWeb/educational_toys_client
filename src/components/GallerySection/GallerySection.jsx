@@ -17,7 +17,7 @@ const GallerySection = () => {
   
 
   return (
-    <section className="gallery-section">
+    <section data-aos-duration="600" data-aos="fade-left" data-aos-easing="ease-in-sine" className="gallery-section">
       <h3 className='text-center'>Our Gallery</h3>
       <div className="gallery-container my-4 mb-5">
         {galleryImages.map((image) => (

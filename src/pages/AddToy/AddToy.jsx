@@ -89,7 +89,7 @@ const AddToy = () => {
       </Form.Group>
       <Form.Group controlId="sellerEmail">
         <Form.Label>Seller Email:</Form.Label>
-        <Form.Control type="email" name="sellerEmail" defaultValue={user?.email} />
+        <Form.Control type="email" name="sellerEmail" value={user?.email} />
       </Form.Group>
       <Form.Group controlId="subcategory">
         <Form.Label>Subcategory:</Form.Label>

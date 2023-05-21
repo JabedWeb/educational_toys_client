@@ -1,19 +1,21 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import GallerySection from '../../components/GallerySection/GallerySection'
-import ShopByCategory from '../../components/SjopByCategory/ShopByCategory'
+import ShopByCategory from '../../components/ShopByCategory/ShopByCategory'
 import Banner from '../../components/Banner/Banner'
 import Testimonial from '../../components/Testimonial/Testimonial'
+import RegisterSection from '../../components/BenifitSection/RegisterSection'
 
 function Home() {
   return (
     <div>
       <Banner></Banner>
       <Container>
-      <ShopByCategory></ShopByCategory>
       <GallerySection></GallerySection>
-      <Testimonial></Testimonial>
+      <ShopByCategory></ShopByCategory>
     </Container>
+    <RegisterSection></RegisterSection>
+    <Testimonial></Testimonial>
     </div>
   )
 }

@@ -31,7 +31,8 @@ const ShopByCategory = () => {
 
 
   return (
-    <div>
+    <div data-aos-duration="600" data-aos="fade-right" data-aos-easing="ease-in-sine">
+      <h3 className='text-center'>Our Best Category Toys</h3>
       <div className="tabContainer mt-5">
         {subcategories.map(subcategory => (
           <button

@@ -23,3 +23,13 @@
   background-color:#617A55;
   color: #fff;
 }
+
+@media  screen and (max-width: 768px) {
+  .tabContainer {
+    flex-direction: column;
+  }
+  .tabContainer button {
+    margin: 5px 0;
+  }
+}
+  

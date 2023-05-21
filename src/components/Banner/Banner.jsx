@@ -1,46 +1,25 @@
-import Carousel from 'react-bootstrap/Carousel';
+import React from 'react';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import './Banner.css';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
-      return (
-        <Carousel fade>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://img.freepik.com/free-psd/3d-illustration-children-s-toy-cubes-with-letters_23-2149345296.jpg?w=740&t=st=1684651308~exp=1684651908~hmac=262be31ca31ccc83acca0310ddf94aebff01f6519dd55807f8defcafbfdc9852"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://img.freepik.com/free-vector/kids-toys-illustration_24908-57110.jpg?w=740&t=st=1684651316~exp=1684651916~hmac=48ca5102dd98c3fd562401c7908d3ca0b4b269c593c5792b34087cac090acb4a"
-              alt="Second slide"
-            />
-    
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://img.freepik.com/free-vector/baby-items-icon-set-with-toys-accessory-kids-cartoon-style_24797-2159.jpg?size=626&ext=jpg"
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      );
-}
+  return (
+    <div className="banner">
+      <Container>
+        <Row className=' d-flex align-items-center'>
+          <Col data-aos-duration="600" data-aos="fade-right" data-aos-easing="ease-in-sine" md={6}>
+            <h1 className="banner-title">Unleash Imagination, Learning, and Fun</h1>
+            <p className="banner-description">Welcome to Educational Toys Hub, your ultimate destination for discovering the perfect toys that inspire learning and ignite young minds. With a carefully curated selection of educational toys, we are dedicated to providing children with the tools they need to explore, create, and grow.</p>
+            <Link className="text-decoration-none" style={{backgroundColor : "#617A55",color:"#fff",borderRadius:"4px" ,padding:"12px 30px" , margin: "10px 0px"}} to={'/toys'}>Explore Toys</Link>
+          </Col>
+          <Col md={6}>
+            <img data-aos-duration="600" data-aos="fade-left" src="https://img.freepik.com/free-vector/hand-drawn-flat-christmas-toys-collection_23-2149134654.jpg?size=626&ext=jpg" alt="Banner" className="banner-image" />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+};
 
-export default Banner
+export default Banner;
