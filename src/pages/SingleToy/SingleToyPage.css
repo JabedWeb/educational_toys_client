@@ -5,4 +5,7 @@
     .toy_details_info {
         width: 100% !important;
     }
+    .toy_details_image img {
+        width: 100% !important;
+    }
 }

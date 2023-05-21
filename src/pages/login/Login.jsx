@@ -5,6 +5,7 @@ import {Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGoogle } from 'react-icons/fa'
 import { authContext } from '../../providers/authprovider/AuthProvider'
 import { ToastContext } from '../../providers/authprovider/SweetToast'
+import PageTitle from '../../components/PageTitle/PageTitle'
 
 const Login = () => {
   const navigate=useNavigate();
@@ -49,6 +50,7 @@ const Login = () => {
 
   return (
     <Container>
+      <PageTitle title='Login'></PageTitle>
     <Row className='justify-content-center'>
       <Col className='justify-content-center shadow  p-5 my-5' md={5}>
       <form onSubmit={handleLogin}>

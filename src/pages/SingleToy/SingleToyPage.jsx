@@ -21,11 +21,11 @@ const SingleToyPage = () => {
   return (
 
     <Container className='my-5'>
-        <h1 className='text-center'>Toys Details on <strong style={{color : "#617A55"}}> {name}</strong></h1>
+        <h1 className='text-center mb-5'>Toys Details on <strong style={{color : "#617A55"}}> {name}</strong></h1>
 
             <div className="toy_details d-flex flex-wrap justify-content-between align-items-center ">
                 <div className="toy_details_image w-50">
-                    <img src={pictureUrl} alt={name} />
+                    <img className='w-75' src={pictureUrl} alt={name} />
                 </div>
                 <div className="toy_details_info w-50 table-responsive">
                     <Table className='text-start' striped bordered responsive>

@@ -6,6 +6,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { updateProfile } from 'firebase/auth'
 import { authContext } from '../../providers/authprovider/AuthProvider'
 import { ToastContext } from '../../providers/authprovider/SweetToast'
+import PageTitle from '../../components/PageTitle/PageTitle'
 
 const Register = () => {
   const {loginUser}=useContext(authContext)
@@ -61,6 +62,7 @@ const Register = () => {
   }
   return (
     <Container>
+      <PageTitle title='Register'/>
       <Row className='justify-content-center'>
         <Col className='justify-content-center shadow p-5 my-5' md={5}>
         <form onSubmit={handleRegister}>

@@ -3,6 +3,7 @@ import { Button, Container, Form } from 'react-bootstrap'
 import { authContext } from '../../providers/authprovider/AuthProvider';
 import './AddToy.css'
 import { ToastContext } from '../../providers/authprovider/SweetToast';
+import PageTitle from '../../components/PageTitle/PageTitle';
 const AddToy = () => {
 
   const [toyData, setToyData] = useState([]);
@@ -76,6 +77,7 @@ const AddToy = () => {
 
   return (
     <Container>
+      <PageTitle title="Add Toy"></PageTitle>
 
     <Form  className='shadow form_toy my-5 p-5 ' onSubmit={handleSubmit}>
      <h2 className=' my-2'>Add New Toy</h2>
@@ -85,7 +87,7 @@ const AddToy = () => {
       </Form.Group>
       <Form.Group controlId="sellerName">
         <Form.Label>Seller Name:</Form.Label>
-        <Form.Control type="text" name="sellerName" defaultValue={user?.name} />
+        <Form.Control type="text" name="sellerName" value={user?.name} />
       </Form.Group>
       <Form.Group controlId="sellerEmail">
         <Form.Label>Seller Email:</Form.Label>

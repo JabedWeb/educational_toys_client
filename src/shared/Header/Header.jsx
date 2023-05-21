@@ -25,15 +25,17 @@ const Header = () => {
       <Container>
         <Navbar.Brand ><Link className='text-decoration-none text-light' to={'/'}><img style={{width:"80px"}} src='https://w7.pngwing.com/pngs/933/435/png-transparent-sydney-education-school-products-australia-student-sydney-text-logo-educational-toys.png' alt='educational_toys'></img></Link></Navbar.Brand>
         <Navbar.Brand ><Link className='text-decoration-none text-light' to={'/'}>Educational Toys</Link></Navbar.Brand>
+    
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto navbar_custom">
+          <Nav className="ms-auto navbar_custom">
+          <Link className='text-decoration-none text-light' to={'/'}>Home</Link>
             <Link className='text-decoration-none text-light' to={'/toys'}>All Toy</Link>
            {
-              user && <Link className='text-decoration-none text-light px-3' to={'/mytoys'}>My Toys</Link>
+              user && <Link className='text-decoration-none text-light ' to={'/mytoys'}>My Toys</Link>
            }
             {
-              user && <Link className='text-decoration-none text-light px-3' to={'/addtoy'}>Add Toy</Link>
+              user && <Link className='text-decoration-none text-light ' to={'/addtoy'}>Add Toy</Link>
             }
            <Link className='text-decoration-none text-light' to={'/blog'}>Blog</Link>
           </Nav>

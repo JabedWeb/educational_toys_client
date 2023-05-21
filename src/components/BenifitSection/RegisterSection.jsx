@@ -4,7 +4,7 @@ import './RegisterSection.css';
 
 const RegisterSection = () => {
   return (
-    <div className="register-section">
+    <div className="register-section my-5">
       <Container>
         <h3 className="section-title">Unlock Your Toy Selling Potential with Us!</h3>
         <Row>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import SingleToy from './SingleToy';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import PageTitle from '../PageTitle/PageTitle';
 
 const Toys = () => {
   const [toys, setToys] = useState([]);
@@ -75,6 +76,7 @@ const Toys = () => {
   return (
     <>
         <Container className='my-5'>
+          <PageTitle title="Toys"></PageTitle>
           <Row>
             <h3 className='text-center mt-3 mb-3'>Explore Our All Toys</h3>
             <div className="sorting_search d-flex my-2 justify-content-between flex-wrap">

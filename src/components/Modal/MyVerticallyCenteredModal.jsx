@@ -76,7 +76,7 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
       </Form.Group>
       <Form.Group controlId="sellerName">
         <Form.Label>Seller Name:</Form.Label>
-        <Form.Control type="text" name="sellerName" defaultValue={user?.name} />
+        <Form.Control type="text" name="sellerName" value={user?.name} />
       </Form.Group>
       <Form.Group controlId="sellerEmail">
         <Form.Label>Seller Email:</Form.Label>

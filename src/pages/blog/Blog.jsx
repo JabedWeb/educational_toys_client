@@ -1,10 +1,12 @@
 import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import { Card, Container } from 'react-bootstrap';
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 const Blog = () => {
   return (
     <Container className='my-5'>
+      <PageTitle title="Blog"></PageTitle>
         <Accordion defaultActiveKey="0">
       <Accordion.Item eventKey="0">
         <Accordion.Header >

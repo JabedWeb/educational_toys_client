@@ -2,10 +2,13 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import './Error.css'
+import { Link } from 'react-router-dom'
+import PageTitle from '../../components/PageTitle/PageTitle'
 
 const Error = () => {
   return (
-    <Container className='text-center page_404'>
+    <Container className='text-center py-5 page_404'>
+      <PageTitle title="404"></PageTitle>
       <Row>
         <Col>
 
@@ -15,9 +18,9 @@ const Error = () => {
 		</div>
 		
 		<div className="contant_box_404">
-      <h3 className="h2">Look like you arre lost</h3>
+      <h3 className="h2">Look like you are lost</h3>
       <p>The page you are looking for not available!</p>
-      <button className='btn btn-warning text-dark'><a href="/" className="font-bold text-decoration-none">Go to Home</a></button>
+      <Link className="text-decoration-none" style={{backgroundColor : "#617A55",color:"#fff",borderRadius:"4px" ,padding:"12px 30px" , margin: "10px 0px"}} to={'/'}>Home</Link>
 	</div>
 		</div>
 

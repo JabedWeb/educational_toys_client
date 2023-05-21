@@ -5,6 +5,7 @@ import { authContext } from '../../providers/authprovider/AuthProvider';
 import MyVerticallyCenteredModal from '../../components/Modal/MyVerticallyCenteredModal';
 import { ToastContext } from '../../providers/authprovider/SweetToast';
 import Swal from 'sweetalert2';
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 const MyToys = () => {
   const { user } = useContext(authContext);
@@ -56,7 +57,8 @@ const MyToys = () => {
 
   return (
     <Container className='table-responsive'>
-        <Table className='text-center' striped bordered >
+      <PageTitle title='My Toys' />
+        <Table className='text-center' striped bordered responsive >
         <thead>
           <tr>
             <th>Name</th>
