@@ -1,19 +1,19 @@
 
-##Educational Toys
+#Educational Toys
 
 ###Description
-Educational Toys is a web application that allows users to create and share educational Toys. Users can create account and show their toys 
+* #Educational Toys is a web application that allows users to create and share educational Toys. Users can create account and show their toys 
 
 
 ###Technologies Used
-*HTML
-*CSS
-*Bootstrap
-*JavaScript
-*React
+* #HTML
+* #CSS
+* #Bootstrap
+* #JavaScript
+* #React
 
 ###Approach Taken
-I choose Educational toys and then created the backend using Express and MongoDB. I then created the frontend using React. I then deployed the website using Firebase
+* #I choose Educational toys and then created the backend using Express and MongoDB. I then created the frontend using React. I then deployed the website using Firebase
 
 
 ###Color Scheme

@@ -3,6 +3,7 @@ import { Container, Table } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom'
 
 import './SingleToyPage.css'
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 const SingleToyPage = () => {
     const toy =useLoaderData();
@@ -21,6 +22,7 @@ const SingleToyPage = () => {
   return (
 
     <Container className='my-5'>
+                <PageTitle title={name}></PageTitle>
         <h1 className='text-center mb-5'>Toys Details on <strong style={{color : "#617A55"}}> {name}</strong></h1>
 
             <div className="toy_details d-flex flex-wrap justify-content-between align-items-center ">
