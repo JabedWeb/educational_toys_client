@@ -32,7 +32,9 @@ const Header = () => {
            {
               user && <Link className='text-decoration-none text-light px-3' to={'/mytoys'}>My Toys</Link>
            }
-            <Link className='text-decoration-none text-light px-3' to={'/addtoy'}>Add Toy</Link>
+            {
+              user && <Link className='text-decoration-none text-light px-3' to={'/addtoy'}>Add Toy</Link>
+            }
            <Link className='text-decoration-none text-light' to={'/blog'}>Blog</Link>
           </Nav>
           <Nav className='align-items-center'>

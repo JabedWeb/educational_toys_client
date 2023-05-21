@@ -11,6 +11,7 @@ const SingleToy = ({ toys }) => {
     subcategory,
     price,
     rating,
+    sellerName
 
   } = toys;
 
@@ -22,8 +23,13 @@ const SingleToy = ({ toys }) => {
       </div>
       
       <Card.Body>
+
         <Card.Title> <h5>{name}</h5> </Card.Title>
+        <div className="price_ratting d-flex justify-content-between">
         <Card.Text> <h6>{subcategory}</h6> </Card.Text>
+        <Card.Text> <h6>{sellerName}</h6> </Card.Text>
+          </div>
+
           <div className="price_ratting d-flex justify-content-between">
           <Card.Text> <strong>${price}</strong> </Card.Text>
           <Card.Text> <strong className="d-flex align-items-center"> <FaStar className="me-1" style={{color : "gold"}}></FaStar>{rating}

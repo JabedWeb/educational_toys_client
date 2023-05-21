@@ -21,6 +21,7 @@ const Login = () => {
     const password=form.password.value;
     signIn(email,password)
     .then(result=>{
+      console.log(result);
       successToast()
       navigate(from)
     })
@@ -62,9 +63,6 @@ const Login = () => {
         </div>
         <button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}} type="submit"  className="btn text-light mb-3">login</button>
      </form>
-     {
-        success ? <strong className='text-center mt-2 text-success'>{success}</strong> : '' 
-      }
      <div className="social_login d-flex justify-content-center flex-wrap">
           <div className="google_sign">
              <button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}}  onClick={signInWithGoggle}  className='btn d-flex align-items-center fw-bold px-3 my-2 py-2  text-light me-2'> <FaGoogle className='me-1'></FaGoogle> Google LogIn</button>

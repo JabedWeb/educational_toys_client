@@ -9,7 +9,7 @@ import { ToastContext } from '../../providers/authprovider/SweetToast'
 
 const Register = () => {
   const {loginUser}=useContext(authContext)
-  const {successToast,alertToast}=useContext(ToastContext)
+  const {successToast,alertToast,wrongToast}=useContext(ToastContext)
   
   const navigate=useNavigate();
   
@@ -34,6 +34,8 @@ const Register = () => {
         form.reset();
       })
       .catch(error=>{
+        wrongToast()
+
         console.log(error);
       }
       )
@@ -82,15 +84,6 @@ const Register = () => {
           </div>
           <button style={{backgroundColor: "#617A55" ,borderRadius:"4px"}}  type="submit" className="btn text-light mb-3 ">Register</button>
        </form>
-       <strong className='text-danger'>{error?error : ''}</strong>
-       {/* <div className="social_login d-flex justify-content-center flex-wrap">
-          <div className="google_sign">
-             <button style={{borderRadius:"4px"}} onClick={signInWithGoggle}  className='btn d-flex align-items-center fw-bold px-3 my-2 py-2 btn-warning text-dark me-2'> <FaGoogle className='me-1'></FaGoogle> Google SignUp</button>
-          </div>
-          <div className="google_sign">
-             <button style={{borderRadius:"4px"}} onClick={signInWithGithub}  className='btn fw-bold px-3 my-2 py-2 btn-warning text-dark me-2'> <FaGithub className='me-1'></FaGithub> Github SignUp</button>
-          </div>
-       </div> */}
        <h5 className='text-center mt-2'>I have already account ? <Link style={{color: "#617A55"}} className='text-decoration-none' to={'/login'}> Login</Link></h5>
         </Col>
       </Row>

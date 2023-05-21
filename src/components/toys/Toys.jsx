@@ -76,7 +76,8 @@ const Toys = () => {
     <>
         <Container className='my-5'>
           <Row>
-            <div className="sorting_search d-flex justify-content-between flex-wrap">
+            <h3 className='text-center mt-3 mb-3'>Explore Our All Toys</h3>
+            <div className="sorting_search d-flex my-2 justify-content-between flex-wrap">
             <div>
             <h4>Sort Order</h4>
             <select onChange={setSortOrder}>
