@@ -38,8 +38,7 @@ $ npm run dev
 ```
 
 
-###Live Link
- Live Link: [https://educationaltoys-42f2f.web.app/](https://educationaltoys-42f2f.web.app/)
+- Live Link: [https://educationaltoys-42f2f.web.app/](https://educationaltoys-42f2f.web.app/)
 
 
 
