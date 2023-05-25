@@ -1,6 +1,9 @@
 *{
 font-family: 'Poppins', sans-serif;
 }
+html,body {
+    overflow-x: hidden;
+}
 img {
     width: 100%;
 }

@@ -69,7 +69,7 @@ const ShopByCategory = () => {
           role="status"
           aria-hidden="true"
         />
-        Loading...
+        Loading... Please Wait For A While . Vercel Server Is Slow 😞 .
       </Button>
     }
     </>

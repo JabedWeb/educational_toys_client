@@ -3,6 +3,7 @@ import { Link, useLoaderData } from 'react-router-dom'
 import SingleToy from './SingleToy';
 import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import PageTitle from '../PageTitle/PageTitle';
+import './SingleToy.css'
 
 const Toys = () => {
   const [toys, setToys] = useState([]);
@@ -66,10 +67,10 @@ const Toys = () => {
 
           {
             toys && toys.length > 0 ? <Row>
-            <h3 className='text-center mt-3 mb-3'>Explore Our All Toys</h3>
+            <h2 className='text-center mt-3 mb-3'>Explore Our All Toys</h2>
             <div className="sorting_search d-flex my-2 justify-content-between flex-wrap">
             <div>
-            <h4>Sort Order</h4>
+            <h4>Sorting Depend On Price</h4>
             <select onChange={setSortOrder}>
               <option value="">Select</option>
               <option value="asc">Ascending</option>
@@ -97,7 +98,7 @@ const Toys = () => {
           role="status"
           aria-hidden="true"
         />
-        Loading...
+        Loading... Please Wait For A While . Vercel Server Is Slow 😞 .
       </Button>
           }
         </Container>

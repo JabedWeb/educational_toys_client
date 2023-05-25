@@ -48,7 +48,7 @@ const Header = () => {
               }
                 {
               !user && <Nav className='me-auto navbar_custom'>
-              <Link className='text-decoration-none text-light px-2' to={'/login'}>Login</Link>
+              <Link className='text-decoration-none text-light' to={'/login'}>Login</Link>
             <Link className='text-decoration-none text-light' to={'/register'}>Register</Link>
             </Nav>
                 }

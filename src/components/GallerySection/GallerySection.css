@@ -52,3 +52,10 @@
     margin-bottom: 10px;
   }
   
+
+  @media screen and (max-width: 768px) {
+    .gallery-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+  }

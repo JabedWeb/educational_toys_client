@@ -8,6 +8,10 @@
     margin-right: 10px;
     margin-bottom: 10px;
   }
+
+  footer.footer {
+    text-align: start;
+    }
   
   .footer__menu {
     list-style-type: none;
@@ -73,3 +77,12 @@
     font-size: 14px;
   }
   
+  @media screen and (max-width: 768px) {
+      footer.footer {
+      text-align: center;
+      }
+    .social-icons {
+      justify-content: center;
+      margin-bottom: 20px;
+      }
+}

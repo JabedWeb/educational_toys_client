@@ -72,27 +72,27 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
     <Form onSubmit={handleSubmitUpdate}>
       <Form.Group controlId="name">
         <Form.Label>Name:</Form.Label>
-        <Form.Control type="text" name="name" defaultValue ={toy?.name} />
+        <Form.Control type="text" name="name"  defaultValue ={toy?.name} />
       </Form.Group>
-      <Form.Group controlId="sellerName">
+      <Form.Group hidden controlId="sellerName">
         <Form.Label>Seller Name:</Form.Label>
-        <Form.Control type="text" name="sellerName" value={user?.name} />
+        <Form.Control type="text" name="sellerName"  value={user?.name} />
       </Form.Group>
-      <Form.Group controlId="sellerEmail">
+      <Form.Group hidden controlId="sellerEmail">
         <Form.Label>Seller Email:</Form.Label>
-        <Form.Control type="email" name="sellerEmail" value={user?.email} />
+        <Form.Control type="email" name="sellerEmail"  value={user?.email} />
       </Form.Group>
-      <Form.Group controlId="subcategory">
+      <Form.Group hidden controlId="subcategory">
         <Form.Label>Subcategory:</Form.Label>
-        <Form.Control type="text" name="subcategory" value={toy.subcategory}/>
+        <Form.Control type="text" name="subcategory"  value={toy.subcategory}/>
       </Form.Group>
       <Form.Group controlId="price">
         <Form.Label>Price:</Form.Label>
         <Form.Control type="number" name="price" defaultValue={toy.price} />
       </Form.Group>
-      <Form.Group controlId="rating">
+      <Form.Group hidden controlId="rating">
         <Form.Label>Rating:</Form.Label>
-        <Form.Control type="number" name="rating" defaultValue={toy.rating} />
+        <Form.Control type="number" name="rating"  defaultValue={toy.rating} />
       </Form.Group>
       <Form.Group controlId="quantity">
         <Form.Label>Quantity:</Form.Label>
@@ -102,7 +102,7 @@ const MyVerticallyCenteredModal = ({show,toyid,toy,onHide,myToys,setMyToys}) => 
         <Form.Label>Description:</Form.Label>
         <Form.Control as="textarea" name="description" defaultValue={toy.description} />
       </Form.Group>
-      <Form.Group controlId="pictureUrl">
+      <Form.Group hidden controlId="pictureUrl">
         <Form.Label>Picture URL:</Form.Label>
         <Form.Control type="text" name="pictureUrl" defaultValue={toy.pictureUrl}/>
       </Form.Group>
